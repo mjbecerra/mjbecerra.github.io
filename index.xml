@@ -972,7 +972,7 @@ sentence-similarity
 &lt;div class="p-6 space-y-4"&gt;
 &lt;div class="flex items-center gap-6 pt-2"&gt;&lt;div class="flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400"&gt;
 &lt;svg class="w-4 h-4 text-primary-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/&gt;&lt;/svg&gt;&lt;span id="hb-hb-embed-7aa30c396b2f58a7972cf6a10cb190b4-downloads"&gt;1.178758M&lt;/span&gt;&lt;/div&gt;&lt;div class="flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400"&gt;
-&lt;svg class="w-4 h-4 text-secondary-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12"/&gt;&lt;/svg&gt;&lt;span id="hb-hb-embed-7aa30c396b2f58a7972cf6a10cb190b4-likes"&gt;1.723k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;svg class="w-4 h-4 text-secondary-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12"/&gt;&lt;/svg&gt;&lt;span id="hb-hb-embed-7aa30c396b2f58a7972cf6a10cb190b4-likes"&gt;1.724k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="absolute inset-0 pointer-events-none bg-gradient-to-r from-primary-500/0 via-primary-500/5 to-secondary-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"&gt;&lt;/div&gt;
 &lt;div class="sr-only" data-hb-component="embed" data-hb-version="1.0" data-hb-license="MIT"&gt;
@@ -1198,7 +1198,7 @@ Powered by Hugo Blox Kit - https://github.com/HugoBlox/kit
 format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!&lt;/p&gt;
 &lt;p&gt;Save your Plotly JSON in your page folder, for example &lt;code&gt;line-chart.json&lt;/code&gt;, and then add the &lt;code&gt;{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code&gt; shortcode where you would like the chart to appear.&lt;/p&gt;
 &lt;p&gt;Demo:&lt;/p&gt;
-&lt;div id="chart-719658342" class="chart"&gt;&lt;/div&gt;
+&lt;div id="chart-213847695" class="chart"&gt;&lt;/div&gt;
 &lt;script&gt;
 (function() {
 async function fetchChartJSON() {
@@ -1214,7 +1214,7 @@ return;
 clearInterval( a );
 fetchChartJSON().then(chart =&gt; {
 console.debug('Plotting chart...')
-window.Plotly.newPlot('chart-719658342', chart.data, chart.layout, {responsive: true});
+window.Plotly.newPlot('chart-213847695', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
