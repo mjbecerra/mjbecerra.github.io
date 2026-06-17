@@ -1,0 +1,146 @@
+{{/* Google Translate — client-side translation, no content duplication */}}
+
+{{/* Hidden container required by Google Translate Element API */}}
+<div id="google_translate_element" style="display:none" aria-hidden="true"></div>
+
+<style>
+  /* Hide Google's injected banner bar */
+  .skiptranslate,
+  .goog-te-banner-frame { display: none !important; }
+  body { top: 0 !important; }
+
+  /* Language switcher pill */
+  #hb-lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid currentColor;
+    border-radius: 9999px;
+    padding: 2px 6px;
+    opacity: 0.7;
+    font-size: 0.7rem;
+    line-height: 1;
+    cursor: default;
+    user-select: none;
+  }
+  #hb-lang-switcher:hover { opacity: 1; }
+
+  #hb-lang-switcher button {
+    background: none;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: inherit;
+    line-height: 1;
+    transition: background 0.15s;
+  }
+  #hb-lang-switcher button:hover {
+    background: rgba(128,128,128,0.15);
+  }
+  #hb-lang-switcher button.hb-lang-active {
+    background: rgba(128,128,128,0.25);
+    font-weight: 700;
+  }
+  #hb-lang-switcher .hb-lang-sep {
+    opacity: 0.35;
+    font-size: 0.6rem;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+(function () {
+  /* ── 1. Google Translate init ── */
+  window.googleTranslateElementInit = function () {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'es,fr,pt',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+
+  /* ── 2. Cookie helpers ── */
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? decodeURIComponent(match[2]) : '';
+  }
+
+  function setLang(lang) {
+    localStorage.setItem('preferred-lang', lang);
+    var expires = 'expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/';
+    if (lang === 'en') {
+      document.cookie = 'googtrans=/en/en; ' + expires;
+    } else {
+      document.cookie = 'googtrans=/en/' + lang + '; ' + expires;
+    }
+    location.reload();
+  }
+
+  function getActiveLang() {
+    var cookie = getCookie('googtrans');
+    if (!cookie || cookie === '/en/en') return 'en';
+    var parts = cookie.split('/');
+    return parts[parts.length - 1] || 'en';
+  }
+
+  /* ── 3. Auto-detect on first visit ── */
+  if (!localStorage.getItem('preferred-lang')) {
+    var nav = (navigator.language || navigator.userLanguage || 'en').substring(0, 2).toLowerCase();
+    if (nav === 'es' || nav === 'fr' || nav === 'pt') {
+      setLang(nav); // triggers reload — will not run again after that
+      return;
+    }
+    localStorage.setItem('preferred-lang', 'en');
+  }
+
+  /* ── 4. Build language switcher UI ── */
+  document.addEventListener('DOMContentLoaded', function () {
+    var activeLang = getActiveLang();
+    var langs = [
+      { code: 'en', label: 'EN' },
+      { code: 'es', label: 'ES' },
+      { code: 'fr', label: 'FR' },
+      { code: 'pt', label: 'PT' }
+    ];
+
+    var switcher = document.createElement('div');
+    switcher.id = 'hb-lang-switcher';
+    switcher.setAttribute('role', 'group');
+    switcher.setAttribute('aria-label', 'Language');
+
+    langs.forEach(function (l, i) {
+      if (i > 0) {
+        var sep = document.createElement('span');
+        sep.className = 'hb-lang-sep';
+        sep.textContent = '|';
+        switcher.appendChild(sep);
+      }
+      var btn = document.createElement('button');
+      btn.textContent = l.label;
+      btn.setAttribute('aria-label', l.code.toUpperCase());
+      if (l.code === activeLang) btn.classList.add('hb-lang-active');
+      btn.addEventListener('click', function () { setLang(l.code); });
+      switcher.appendChild(btn);
+    });
+
+    /* Insert into HugoBlox nav — before the search/dark-mode icons cluster */
+    var nav = document.querySelector('nav');
+    if (nav) {
+      /* HugoBlox puts utility icons in the last flex group of the nav */
+      var icons = nav.querySelector('[data-hb-search-toggle], button[aria-label="Search"], .hb-search-toggle');
+      var target = icons ? icons.parentElement : nav;
+      target.insertBefore(switcher, icons || null);
+    } else {
+      /* Fallback: fixed corner pill */
+      switcher.style.cssText = 'position:fixed;top:12px;right:16px;z-index:9999;';
+      document.body.appendChild(switcher);
+    }
+  });
+})();
+</script>
+
+{{/* Load Google Translate script after our init function is defined */}}
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
