@@ -1,0 +1,67 @@
+# Spanish (es) UI translations — overrides HugoBlox defaults
+
+- id: btn_preprint
+  translation: Preimpresión
+
+- id: btn_pdf
+  translation: PDF
+
+- id: btn_cite
+  translation: Citar
+
+- id: btn_dataset
+  translation: Conjunto de datos
+
+- id: btn_project
+  translation: Proyecto
+
+- id: btn_poster
+  translation: Póster
+
+- id: btn_slides
+  translation: Diapositivas
+
+- id: btn_video
+  translation: Video
+
+- id: btn_code
+  translation: Código
+
+- id: read_more
+  translation: Leer más
+
+- id: search_placeholder
+  translation: Buscar...
+
+- id: copyright_license_text
+  translation: Salvo indicación contraria, el texto de este sitio web está bajo licencia
+
+- id: nav_resume
+  translation: Descargar CV
+
+- id: publications
+  translation: Publicaciones
+
+- id: experience
+  translation: Experiencia
+
+- id: skills
+  translation: Habilidades
+
+- id: awards
+  translation: Premios
+
+- id: languages
+  translation: Idiomas
+
+- id: education
+  translation: Educación
+
+- id: interests
+  translation: Intereses
+
+- id: about
+  translation: Sobre mí
+
+- id: projects
+  translation: Proyectos

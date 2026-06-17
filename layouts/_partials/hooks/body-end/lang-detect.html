@@ -1,0 +1,22 @@
+<script>
+(function () {
+  // Only auto-redirect from English pages (root URLs without /es/, /fr/, /pt/ prefix)
+  var path = window.location.pathname;
+  if (/^\/(es|fr|pt)(\/|$)/.test(path)) return;
+
+  // Skip if user already chose a language manually (stored in sessionStorage per visit)
+  if (sessionStorage.getItem('lang-detected')) return;
+  sessionStorage.setItem('lang-detected', '1');
+
+  var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  // Match es-*, fr-*, pt-* variants
+  if (/^es/.test(lang)) {
+    window.location.href = '/es/';
+  } else if (/^fr/.test(lang)) {
+    window.location.href = '/fr/';
+  } else if (/^pt/.test(lang)) {
+    window.location.href = '/pt/';
+  }
+  // else: stay on English (default)
+})();
+</script>

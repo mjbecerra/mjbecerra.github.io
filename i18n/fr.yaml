@@ -1,0 +1,67 @@
+# French (fr) UI translations — overrides HugoBlox defaults
+
+- id: btn_preprint
+  translation: Prépublication
+
+- id: btn_pdf
+  translation: PDF
+
+- id: btn_cite
+  translation: Citer
+
+- id: btn_dataset
+  translation: Jeu de données
+
+- id: btn_project
+  translation: Projet
+
+- id: btn_poster
+  translation: Affiche
+
+- id: btn_slides
+  translation: Diapositives
+
+- id: btn_video
+  translation: Vidéo
+
+- id: btn_code
+  translation: Code
+
+- id: read_more
+  translation: Lire la suite
+
+- id: search_placeholder
+  translation: Rechercher...
+
+- id: copyright_license_text
+  translation: Sauf indication contraire, le texte de ce site est sous licence
+
+- id: nav_resume
+  translation: Télécharger CV
+
+- id: publications
+  translation: Publications
+
+- id: experience
+  translation: Expérience
+
+- id: skills
+  translation: Compétences
+
+- id: awards
+  translation: Distinctions
+
+- id: languages
+  translation: Langues
+
+- id: education
+  translation: Formation
+
+- id: interests
+  translation: Intérêts
+
+- id: about
+  translation: À propos
+
+- id: projects
+  translation: Projets
