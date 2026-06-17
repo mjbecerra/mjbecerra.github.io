@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title/><link>https://mjbecerra.github.io/</link><atom:link href="https://mjbecerra.github.io/index.xml" rel="self" type="application/rss+xml"/><description/><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><image><url>https://mjbecerra.github.io/media/icon_hu_eee4a95885829ab2.png</url><title/><link>https://mjbecerra.github.io/</link></image><item><title>Getting Started</title><link>https://mjbecerra.github.io/courses/hugo-blox/getting-started/</link><pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate><guid>https://mjbecerra.github.io/courses/hugo-blox/getting-started/</guid><description>&lt;h2 id="quick-start-from-template"&gt;Quick Start from Template&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title/><link>https://mjbecerra.github.io/</link><atom:link href="https://mjbecerra.github.io/index.xml" rel="self" type="application/rss+xml"/><description/><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><image><url>https://mjbecerra.github.io/media/sharing.png</url><title/><link>https://mjbecerra.github.io/</link></image><item><title>Getting Started</title><link>https://mjbecerra.github.io/courses/hugo-blox/getting-started/</link><pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate><guid>https://mjbecerra.github.io/courses/hugo-blox/getting-started/</guid><description>&lt;h2 id="quick-start-from-template"&gt;Quick Start from Template&lt;/h2&gt;
 &lt;div class="hb-steps"&gt;
 &lt;h3 id="create-a-site"&gt;Create a site&lt;/h3&gt;
 &lt;p&gt;
@@ -1198,7 +1198,7 @@ Powered by Hugo Blox Kit - https://github.com/HugoBlox/kit
 format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!&lt;/p&gt;
 &lt;p&gt;Save your Plotly JSON in your page folder, for example &lt;code&gt;line-chart.json&lt;/code&gt;, and then add the &lt;code&gt;{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code&gt; shortcode where you would like the chart to appear.&lt;/p&gt;
 &lt;p&gt;Demo:&lt;/p&gt;
-&lt;div id="chart-213847695" class="chart"&gt;&lt;/div&gt;
+&lt;div id="chart-175689324" class="chart"&gt;&lt;/div&gt;
 &lt;script&gt;
 (function() {
 async function fetchChartJSON() {
@@ -1214,7 +1214,7 @@ return;
 clearInterval( a );
 fetchChartJSON().then(chart =&gt; {
 console.debug('Plotting chart...')
-window.Plotly.newPlot('chart-213847695', chart.data, chart.layout, {responsive: true});
+window.Plotly.newPlot('chart-175689324', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();

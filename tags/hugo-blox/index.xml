@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo Blox |</title><link>https://mjbecerra.github.io/tags/hugo-blox/</link><atom:link href="https://mjbecerra.github.io/tags/hugo-blox/index.xml" rel="self" type="application/rss+xml"/><description>Hugo Blox</description><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate><image><url>https://mjbecerra.github.io/media/icon_hu_eee4a95885829ab2.png</url><title>Hugo Blox</title><link>https://mjbecerra.github.io/tags/hugo-blox/</link></image><item><title>Learn Hugo Blox in 10 minutes!</title><link>https://mjbecerra.github.io/courses/hugo-blox/</link><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><guid>https://mjbecerra.github.io/courses/hugo-blox/</guid><description>&lt;p&gt;👋 Welcome to your shiny new site. Ready to learn more?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo Blox |</title><link>https://mjbecerra.github.io/tags/hugo-blox/</link><atom:link href="https://mjbecerra.github.io/tags/hugo-blox/index.xml" rel="self" type="application/rss+xml"/><description>Hugo Blox</description><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate><image><url>https://mjbecerra.github.io/media/sharing.png</url><title>Hugo Blox</title><link>https://mjbecerra.github.io/tags/hugo-blox/</link></image><item><title>Learn Hugo Blox in 10 minutes!</title><link>https://mjbecerra.github.io/courses/hugo-blox/</link><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><guid>https://mjbecerra.github.io/courses/hugo-blox/</guid><description>&lt;p&gt;👋 Welcome to your shiny new site. Ready to learn more?&lt;/p&gt;
 &lt;p&gt;This course provides a brief introduction to creating and editing your site with Hugo Blox. For full documentation, refer to the
 .&lt;/p&gt;
 &lt;h2 id="next"&gt;Next&lt;/h2&gt;
@@ -615,7 +615,7 @@ Powered by Hugo Blox Kit - https://github.com/HugoBlox/kit
 format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!&lt;/p&gt;
 &lt;p&gt;Save your Plotly JSON in your page folder, for example &lt;code&gt;line-chart.json&lt;/code&gt;, and then add the &lt;code&gt;{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code&gt; shortcode where you would like the chart to appear.&lt;/p&gt;
 &lt;p&gt;Demo:&lt;/p&gt;
-&lt;div id="chart-213847695" class="chart"&gt;&lt;/div&gt;
+&lt;div id="chart-175689324" class="chart"&gt;&lt;/div&gt;
 &lt;script&gt;
 (function() {
 async function fetchChartJSON() {
@@ -631,7 +631,7 @@ return;
 clearInterval( a );
 fetchChartJSON().then(chart =&gt; {
 console.debug('Plotting chart...')
-window.Plotly.newPlot('chart-213847695', chart.data, chart.layout, {responsive: true});
+window.Plotly.newPlot('chart-175689324', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
