@@ -5,13 +5,55 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#2d6a4f">
 
+{{- /* meta description: abstract for publications, site description elsewhere */ -}}
+{{- $desc := site.Params.hugoblox.identity.description -}}
+{{- with .Params.abstract }}{{- if gt (len (trim . " ")) 5 }}{{- $desc = . }}{{- end }}{{- end }}
+{{- with .Description }}{{- if gt (len (trim . " ")) 5 }}{{- $desc = . }}{{- end }}{{- end }}
+<meta name="description" content="{{ $desc | truncate 160 | plainify | htmlEscape }}">
+
 {{- /* Research keywords for academic crawlers */ -}}
 <meta name="keywords" content="Melgris Becerra, Melgris José Becerra Ruiz, geographer, environmental scientist, GIS, spatial analysis, indigenous territories, Amazon, Amazonia, climate change, participatory cartography, critical geography, environmental education, indigenous peoples, UFPA, CLACSO, Venezuela, Brazil, socio-environmental research">
 
 {{- /* Author attribution */ -}}
 <meta name="author" content="Melgris José Becerra Ruiz">
 
-{{- /* Schema.org Person — improves Google Knowledge Panel, Google Scholar indexing, and academic SEO */ -}}
+{{- /* ScholarlyArticle JSON-LD for publication pages (Google Scholar, Semantic Scholar) */ -}}
+{{- if eq .Section "publications" }}
+{{- $doi := "" }}
+{{- with .Params.hugoblox }}{{- with .ids }}{{- with .doi }}{{- $doi = . }}{{- end }}{{- end }}{{- end }}
+{{- $pubName := "" }}
+{{- with .Params.publication }}{{- with .name }}{{- $pubName = . }}{{- end }}{{- end }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": {{ .Title | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": "Melgris José Becerra Ruiz",
+    "url": "{{ site.BaseURL }}",
+    "identifier": "https://orcid.org/0000-0001-6675-7370"
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02" }}"
+  {{- with $pubName }},
+  "isPartOf": {
+    "@type": "Periodical",
+    "name": {{ . | jsonify }}
+  }{{- end }}
+  {{- if gt (len (trim .Params.abstract " ")) 5 }},
+  "abstract": {{ .Params.abstract | jsonify }}{{- end }}
+  {{- with $doi }},
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": {{ . | jsonify }}
+  },
+  "url": "https://doi.org/{{ . }}"{{- end }}
+}
+</script>
+{{- end }}
+
+{{- /* Schema.org Person — improves Google Knowledge Panel and academic SEO */ -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

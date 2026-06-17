@@ -1,7 +1,8 @@
 ---
-# Leave the homepage title empty to use the site title
 title: ''
 summary: ''
+seo:
+  title: "Melgris José Becerra Ruiz | Geographer & Environmental Scientist"
 date: 2022-10-24
 type: landing
 
